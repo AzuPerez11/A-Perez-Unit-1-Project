@@ -34,8 +34,8 @@ var quotes = [
   The "getRandomQuote" function generates a random quote from the array of objects above to display on the screen.
 ***/
 function getRandomQuote(bananas){
-  var randomNumber = Math.floor(Math.random() * 7);
-  return bananas[randomNumber]
+  var randomNumber = Math.floor(Math.random() * bananas.length);
+  return bananas[randomNumber];
 };
 
 /***
@@ -51,14 +51,15 @@ function printQuote(){
   var passingQuote = getRandomQuote(quotes);
   var html = "";
   html += '<p class="quote">' + passingQuote.quote + "</p>";
-  html += '<p class="source">' + passingQuote.source + "</p>";
+  html += '<p class="source">' + passingQuote.source;
 if (typeof passingQuote.citation !== "undefined"){
   html += '<span class = "citation">' + passingQuote.citation + "</span>";
-} 
-
+  html += "</p>";
+}
 var quoteBox = document.getElementById("quote-box");
 quoteBox.innerHTML = html;
-console.log(passingQuote.quote);
+};
+
 /***
   When the "Show another quote" button is clicked, the event listener 
   below will be triggered, and it will call, or "invoke", the `printQuote` 
