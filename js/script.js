@@ -31,7 +31,7 @@ var quotes = [
    ];
 
 /***
-  The "getRandomQuote" function generates a random quote from the array of objects above to display on the screen.
+  The "getRandomQuote" function generates a random number to select the object within the array above.
 ***/
 function getRandomQuote(bananas){
   var randomNumber = Math.floor(Math.random() * bananas.length);
@@ -39,13 +39,7 @@ function getRandomQuote(bananas){
 };
 
 /***
-  Create the `printQuote` function to: 
-   - call the `getRandomQuote` function and assign it to a variable.
-   - use the properties of the quote object stored in the variable to 
-     create your HTML string.
-   - use conditionals to make sure the optional properties exist before 
-     they are added to the HTML string.
-   - set the `innerHTML` of the `quote-box` div to the HTML string. 
+  The printQuote function displays the individual items within the object selected above.  
 ***/
 function printQuote(){
   var passingQuote = getRandomQuote(quotes);
@@ -70,4 +64,3 @@ quoteBox.innerHTML = html;
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
 
-// Remember to delete the comments that came with this file, and replace them with your own code comments.
